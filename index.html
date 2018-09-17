@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>RecordRTC Experiment</title>
+  </head>
+
+  <body>
+    <iframe src="https://www.w3schools.com" width="400" height="300" scrolling="no"></iframe>
+    <video controls autoplay></video>
+
+    <script src="https://cdn.webrtc-experiment.com/Screen-Capturing.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script>
+      isChromeExtensionAvailable(function(isAvailable) {
+        if (!isAvailable) alert('Chrome extension is either not installed or disabled.');
+      });
+
+      getScreenConstraints(function(error, screen_constraints) {
+        if (error) {
+          return alert(error);
+        }
+
+        navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+        navigator.getUserMedia({
+          video: screen_constraints
+        }, function(stream) {
+          var video = document.querySelector('video');
+          video.src = URL.createObjectURL(stream);
+          video.play();
+        }, function(error) {
+          alert(JSON.stringify(error, null, '\t'));
+        });
+      });
+    </script>
+  </body>
+</html>
