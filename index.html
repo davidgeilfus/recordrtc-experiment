@@ -6,9 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>RecordRTC Experiment</title>
+    <link rel="stylesheet" href="https://assets-cdn.ziggeo.com/v2-stable/ziggeo.css">
+    <script src="https://assets-cdn.ziggeo.com/v2-stable/ziggeo.js"></script>
+    <script>
+    var ziggeoApp = new ZiggeoApi.V2.Application({
+      token:"70904a3ca3cd084a6205cd8f5d0c1d86"
+    });
+    </script>
   </head>
 
   <body>
+    <ziggeorecorder ziggeo-width=320 ziggeo-height=240 ziggeo-theme="modern" ziggeo-themecolor="red"></ziggeorecorder>
+    <!--
     <video controls autoplay></video>
     <button id="record-button">Start recording</button>
 
@@ -38,5 +47,6 @@
         window.open('https://www.dribbble.com', '_blank');
       };
     </script>
+    -->
   </body>
 </html>
