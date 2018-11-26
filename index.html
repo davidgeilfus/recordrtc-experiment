@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>RecordRTC Experiment</title>
-    <link rel="stylesheet" href="https://assets-cdn.ziggeo.com/v2-stable/ziggeo.css">
-    <script src="https://assets-cdn.ziggeo.com/v2-stable/ziggeo.js"></script>
-    <script>
-    var ziggeoApp = new ZiggeoApi.V2.Application({
-      token:"r14f992fd8fe3b16d77c8f971dea808e"
-    });
-    </script>
+    <link rel="stylesheet" href="https://assets-cdn.ziggeo.com/v1-stable/ziggeo.css">
+    <script src="https://assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
+    <script>ZiggeoApi.token = 'r14f992fd8fe3b16d77c8f971dea808e';</script>
   </head>
 
   <body>
-    <ziggeorecorder ziggeo-width=320 ziggeo-height=240 ziggeo-theme="modern" ziggeo-themecolor="red"></ziggeorecorder>
+    <ziggeorecorder
+      ziggeo-timelimit="10"
+      allowscreen=true
+      allowupload=false
+      allowrecord=false>
+    </ziggeorecorder>
     <!--
     <video controls autoplay></video>
     <button id="record-button">Start recording</button>
